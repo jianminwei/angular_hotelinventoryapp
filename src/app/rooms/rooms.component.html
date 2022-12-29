@@ -1,0 +1,58 @@
+<!-- interpolation using {{}} -->
+<h1>Welcome to {{hotelName}}</h1>
+
+
+<div [hidden]="hideRooms">
+
+
+    <!--use ngStyle directive  -->
+    <!-- another syntax: <div *ngIf="rooms.availableRooms > 0" [ngStyle]="{color: 'darkgreen'}"> -->
+    <div [ngStyle]="{color: rooms.availableRooms > 0 ? 'darkgreen' : 'red'}">
+
+        <!-- use property binding [HtmlPropertyName]="ComponentPropertyName" -->
+        <!-- JavaScript syntax: document.getElementById('numberOfRooms').innerText = numberOfRooms; -->
+        Number of Rooms: <span [innerText]="numberOfRooms"></span>
+    </div>
+
+</div>
+
+<!-- Event binding using banana syntax-->
+<button (click)="toggle()">Toggle</button>
+
+
+<!--use *ngIf directive -->
+<div *ngIf="rooms.availableRooms">
+    Rooms List
+    <table class="table">
+        <tr>
+            <th>Rooom Type</th>
+            <th>Room Price</th>
+            <th>Room Amenities</th>
+            <th>Checkin Time</th>
+        </tr>
+
+        <!--use *ngFor directive -->
+        <!--use ngClass directive -->
+        <tr *ngFor="let room of roomList; let e = even" [ngClass]="e? 'even': 'odd'">
+            <td>{{room.roomType | titlecase}}</td> <!-- apply titlecase pipe-->
+            <td>{{room.price | currency }}</td> <!--apply currency pipe-->
+            <td>{{room.amenities | lowercase}}</td> <!--apply a lowercase pipe-->
+            <td>{{room.checkinTime | date}}</td> <!--apply a date pipe-->
+            <td>{{room.rating | number : '1.2-2' }}</td> <!-- apply a decimal pipe-->
+        </tr>
+    </table>
+</div>
+
+
+<!-- try json  and slice pipe
+    <div>{{roomList | json}}</div>
+    <div>{{roomList |slice: 0:2 | json}}</div>
+-->
+
+<!--use ngSwith directive-->
+<div [ngSwitch]="role">
+    <div *ngSwitchCase="'user'">Welcome user</div>
+    <div *ngSwitchCase="'admin'">Welcome admin</div>
+    <div *ngSwitchDefault> Welcome!</div>
+</div>
+

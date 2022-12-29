@@ -1,0 +1,96 @@
+1. Install Angular version 13.0.1 
+
+    npm install -g @angular/cli@13.0.1
+
+2. Create a new project with angular cli
+
+    ng new hotelinventoryapp
+
+3. Open the new folder in VSCode, and run the project
+
+    ng serve --open 
+
+
+4. Play with app.component.html to see the application changes.
+
+    inline html and style
+
+5. generate a new component.
+
+    ng generate component rooms
+
+6. Use the new "rooms" component in app.component.html by adding following.
+
+    <app-rooms></app-rooms>
+
+7. Template Syntax
+
+    Binding Syntax
+
+    a. Interpolation, using {{}}
+    b. Property Binding
+        HTML property binding [HtmlPropertyName]="ComponentPropertyName".
+    c. Event Binding
+        <button (click)="toggle()">Toggle</button>
+
+    See rooms.componenet.html uses all three binding syntax.
+
+8. directive
+    a. Directives are used to change the behavior and appearance of DOM element.
+    b. Directives can implement all lifecycle hooks.
+    c. Directives can not have template.
+
+    There are two types of directives.
+
+    * Structural directives (with *).
+    * Attribute directives (without *, ngClass, ngStyle).
+
+    *ngIf
+    *ngFor
+    *ngSwitch
+    ngClass
+    ngStyle
+
+9. pipes
+    Pipes are used for data transformation.
+    Pipes don't change actual object.
+
+    .DatePipe
+    .UpperCasePipe
+    .LowerCasePipe
+    .CurrencyPipe
+    .DecimalPipe
+    .PercentPipe
+    .JsonPipe
+    .SlicePipe
+    .AsyncPipe
+
+
+10. Add bootstrp styling.
+
+    in the style.css, add:
+    @import '~bootstrap/dist/css/bootstrap.min.css'
+
+
+
+11. lifecycle hooks
+
+    -Component instance has lifecycle hooks which can help you to hook into different events
+    on Component.
+    -lifecycle ends when componenet is destroyed.
+
+    .ngOnChanges
+    .ngOnInit
+    .ngDoCheck
+    .ngAfterContentInit
+    .ngAfterContentChecked
+    .ngAfterViewInit
+    .ngAFterViewChecked
+    .ngOnDestroy
+
+
+    Component communication.
+
+
+
+video time: 4:30, directive
