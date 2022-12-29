@@ -21,13 +21,12 @@ export class RoomsComponent implements OnInit {
   };
 
   roomList: RoomList[] = [];
-  
+
   constructor() { }
 
   ngOnInit(): void {
 
-    //Normally you do data retrieve in the ngOnInit event.
-
+    //normally you put data retrieving in the ngOnInit event.
     this.roomList =  [
       {
         roomType: 'Deluxe Room',

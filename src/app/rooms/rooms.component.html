@@ -22,25 +22,7 @@
 
 <!--use *ngIf directive -->
 <div *ngIf="rooms.availableRooms">
-    Rooms List
-    <table class="table">
-        <tr>
-            <th>Rooom Type</th>
-            <th>Room Price</th>
-            <th>Room Amenities</th>
-            <th>Checkin Time</th>
-        </tr>
-
-        <!--use *ngFor directive -->
-        <!--use ngClass directive -->
-        <tr *ngFor="let room of roomList; let e = even" [ngClass]="e? 'even': 'odd'">
-            <td>{{room.roomType | titlecase}}</td> <!-- apply titlecase pipe-->
-            <td>{{room.price | currency }}</td> <!--apply currency pipe-->
-            <td>{{room.amenities | lowercase}}</td> <!--apply a lowercase pipe-->
-            <td>{{room.checkinTime | date}}</td> <!--apply a date pipe-->
-            <td>{{room.rating | number : '1.2-2' }}</td> <!-- apply a decimal pipe-->
-        </tr>
-    </table>
+    <app-rooms-list [rooms]="roomList"></app-rooms-list>
 </div>
 
 
