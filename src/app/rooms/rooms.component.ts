@@ -11,8 +11,9 @@ export class RoomsComponent implements OnInit {
   hotelName = 'Hilton Hotel'
   numberOfRooms = 20;
   hideRooms = false;
-
   role = 'public';
+  selectedRoom!:RoomList;
+
 
   rooms: Room = {
     totalRooms: 20,
@@ -64,6 +65,7 @@ export class RoomsComponent implements OnInit {
   }
 
   selectRoom(room:RoomList) {
+    this.selectedRoom = room;
     console.log(room)
   }
 
