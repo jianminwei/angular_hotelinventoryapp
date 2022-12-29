@@ -89,8 +89,12 @@
     .ngOnDestroy
 
 
-    Component communication.
+ 12.  Component communication.
+
+    Parent/Child component.
+    @Input, @Output decorator.
+    
 
 
 
-video time: 4:30, directive
+video time: 5:06, Component communication

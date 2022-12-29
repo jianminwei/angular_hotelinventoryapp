@@ -5,6 +5,8 @@ Rooms List
         <th>Room Price</th>
         <th>Room Amenities</th>
         <th>Checkin Time</th>
+        <th>Rating</th>
+        <th>Select Room</th>
     </tr>
 
     <!--use *ngFor directive -->
@@ -15,5 +17,10 @@ Rooms List
         <td>{{room.amenities | lowercase}}</td> <!--apply a lowercase pipe-->
         <td>{{room.checkinTime | date}}</td> <!--apply a date pipe-->
         <td>{{room.rating | number : '1.2-2' }}</td> <!-- apply a decimal pipe-->
+        <td>
+            <button class="btn btn-primary" (click)="selectRoom(room)">
+                Select
+            </button>
+        </td>
     </tr>
 </table>
