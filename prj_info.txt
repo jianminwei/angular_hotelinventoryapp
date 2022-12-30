@@ -73,7 +73,12 @@
 
 
 
-11. lifecycle hooks
+11.  Component communication.
+
+    Parent/Child component.
+    @Input, @Output decorator.
+
+12. lifecycle hooks
 
     -Component instance has lifecycle hooks which can help you to hook into different events
     on Component.
@@ -88,11 +93,22 @@
     .ngAFterViewChecked
     .ngOnDestroy
 
+    Useful ones are ngOnInit, ngOnChanges, ngAfterContentInit, ngOnDestroy
 
- 12.  Component communication.
 
-    Parent/Child component.
-    @Input, @Output decorator.
+13. Dependency Injection (video 6:45)
+
+    .Dependencies are service or objects needed by classes to perform some function.
+    .It's a design pattern.
+    .Angular has built-in Dependency Injection support.
+
+    DI Providers
+    .Class based providers.
+    .Value Providers.
+    .Factory.
+
+    
+
     
 
 

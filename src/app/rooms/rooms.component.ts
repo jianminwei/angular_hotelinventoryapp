@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
+import { RoomsService } from './services/rooms.service';
 
 @Component({
   selector: 'app-rooms',
@@ -12,7 +13,7 @@ export class RoomsComponent implements OnInit {
   numberOfRooms = 20;
   hideRooms = false;
   role = 'public';
-  selectedRoom!:RoomList;
+  selectedRoom!: RoomList;
 
 
   rooms: Room = {
@@ -23,40 +24,12 @@ export class RoomsComponent implements OnInit {
 
   roomList: RoomList[] = [];
 
-  constructor() { }
+  constructor(private roomService: RoomsService) { }
 
   ngOnInit(): void {
 
     //normally you put data retrieving in the ngOnInit event.
-    this.roomList =  [
-      {
-        roomType: 'Deluxe Room',
-        amenities: 'AC, TV, WiFi',
-        price: 99.0,
-        photos: "pic url",
-        checkinTime: new Date('2022-12-05'),
-        checkoutTime: new Date(),
-        rating: 3.5
-      },
-      {
-        roomType: 'Standard Room',
-        amenities: 'AC, WiFi',
-        price: 79.0,
-        photos: "pic url",
-        checkinTime: new Date('2022-12-05'),
-        checkoutTime: new Date(),
-        rating: 4.567
-      },
-      {
-        roomType: 'Delux Room',
-        amenities: 'AC, TV, WiFi',
-        price: 109.0,
-        photos: "pic url",
-        checkinTime: new Date('2022-12-05'),
-        checkoutTime: new Date(),
-        rating: 4.5
-      }
-    ]
+    this.roomList = this.roomService.getRooms();
 
   }
 
@@ -64,29 +37,13 @@ export class RoomsComponent implements OnInit {
     this.hideRooms = !this.hideRooms;
   }
 
-  selectRoom(room:RoomList) {
+  selectRoom(room: RoomList) {
     this.selectedRoom = room;
     console.log(room)
   }
 
   addRoom() {
-
-    const room:RoomList = 
-    {
-      roomType: 'Delux Room',
-      amenities: 'AC, TV, WiFi',
-      price: 119.0,
-      photos: "pic url",
-      checkinTime: new Date('2022-12-06'),
-      checkoutTime: new Date(),
-      rating: 4.8
-    }
-
-    //this.roomList.push(room);
-
-    //in order to work with "changeDetection:ChangeDetectionStrategy.OnPush" detection
-    //stratege on rooms-list component, this.roomList has to be a new array each time.
-    this.roomList = [...this.roomList, room];
+    this.roomList = this.roomService.addRoom();
   }
 
 }
