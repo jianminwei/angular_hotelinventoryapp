@@ -69,4 +69,24 @@ export class RoomsComponent implements OnInit {
     console.log(room)
   }
 
+  addRoom() {
+
+    const room:RoomList = 
+    {
+      roomType: 'Delux Room',
+      amenities: 'AC, TV, WiFi',
+      price: 119.0,
+      photos: "pic url",
+      checkinTime: new Date('2022-12-06'),
+      checkoutTime: new Date(),
+      rating: 4.8
+    }
+
+    //this.roomList.push(room);
+
+    //in order to work with "changeDetection:ChangeDetectionStrategy.OnPush" detection
+    //stratege on rooms-list component, this.roomList has to be a new array each time.
+    this.roomList = [...this.roomList, room];
+  }
+
 }
