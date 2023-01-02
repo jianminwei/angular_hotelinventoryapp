@@ -62,10 +62,13 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "hotelinventoryapp:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "hotelinventoryapp:build:production"
