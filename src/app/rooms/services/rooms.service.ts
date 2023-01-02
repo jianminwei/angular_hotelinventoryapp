@@ -1,50 +1,26 @@
 import { Injectable } from '@angular/core';
 import { RoomList } from '../rooms';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomsService {
 
-  roomList: RoomList[] = [
-    {
-      roomType: 'Deluxe Room',
-      amenities: 'AC, TV, WiFi',
-      price: 99.0,
-      photos: "pic url",
-      checkinTime: new Date('2022-12-05'),
-      checkoutTime: new Date(),
-      rating: 3.5
-    },
-    {
-      roomType: 'Standard Room',
-      amenities: 'AC, WiFi',
-      price: 79.0,
-      photos: "pic url",
-      checkinTime: new Date('2022-12-05'),
-      checkoutTime: new Date(),
-      rating: 4.567
-    },
-    {
-      roomType: 'Delux Room',
-      amenities: 'AC, TV, WiFi',
-      price: 109.0,
-      photos: "pic url",
-      checkinTime: new Date('2022-12-05'),
-      checkoutTime: new Date(),
-      rating: 4.5
-    }
-  ]
+  roomList: RoomList[] = [];
 
-  constructor() { }
+  //Added HttpClient
+  constructor(private http:HttpClient) { }
 
   getRooms() {
-    return this.roomList;
+    //return this.roomList;
+    return this.http.get<RoomList[]>('api/rooms');
   }
 
   addRoom() {
     const room:RoomList = 
     {
+      roomNumber: '99',
       roomType: 'Delux Room',
       amenities: 'AC, TV, WiFi',
       price: 119.0,

@@ -107,10 +107,49 @@
     .Value Providers.
     .Factory.
 
+14. Angular Http and Observables
+    .Introduction
+    .Setting Up HttpClient
+    .Using HttpClient service
+    .RxJs, Observables and streams
+    .http methods
+    .RxJs Operators
+    .Http Interceptors
+    .APP_Initializers
+
+
+    A few changes for making the HTTP call working.
+
+
+    a). Added src/proxy.conf.json  file.
+    b). Added   "proxyConfig": "src/proxy.conf.json" to angular.json under serve/development.
+    c). Added import HttpClientModule in app.module.ts
+    d). Modified rooms.service.ts:
+
+        1) import { HttpClient } from '@angular/common/http';
+
+        2) Add HttpClient in the constructor
+            constructor(private http:HttpClient) { }
+        3) Modify the getRooms() methods
+
+            getRooms() {
+             return this.http.get<RoomList[]>('api/rooms');
+            }
+
+    e). Modified rooms.component.ts as below.
+
+        ngOnInit(): void {
+            this.roomService.getRooms().subscribe(rooms => {this.roomList = rooms});
+        }
+
+    f). Lastly, need to run "hotelapi" service separately on port 3000.
     
 
+
+
+
     
 
 
 
-video time: 7:24, Component communication
+video time: 7:41, Angular Http and Observables

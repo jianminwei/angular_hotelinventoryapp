@@ -29,7 +29,8 @@ export class RoomsComponent implements OnInit {
   ngOnInit(): void {
 
     //normally you put data retrieving in the ngOnInit event.
-    this.roomList = this.roomService.getRooms();
+    this.roomService.getRooms().subscribe(rooms => {this.roomList = rooms});
+    //console.log(this.roomService.getRooms());
 
   }
 
