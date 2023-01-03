@@ -44,7 +44,21 @@ export class RoomsComponent implements OnInit {
   }
 
   addRoom() {
-    this.roomList = this.roomService.addRoom();
+
+    const room:RoomList = 
+    {
+      roomType: 'Delux Room',
+      amenities: 'AC, TV, WiFi',
+      price: 119.0,
+      photos: "pic url",
+      checkinTime: new Date('2022-12-06'),
+      checkoutTime: new Date(),
+      rating: 4.8
+    }
+
+    //this.roomList = this.roomService.addRoom(room);
+
+    this.roomService.addRoom(room).subscribe(rooms => {this.roomList = rooms})
   }
 
 }

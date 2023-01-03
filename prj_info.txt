@@ -116,6 +116,8 @@
     .RxJs Operators
     .Http Interceptors
     .APP_Initializers
+    .RxJs is an library for writing Reactive Programming.
+    .Observables are stream of data to which we can subscribe.
 
 
     A few changes for making the HTTP call working.
