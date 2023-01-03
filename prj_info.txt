@@ -148,10 +148,50 @@
     
 
 
+15. RxJs Operators
+
+    .ShareReplay
+    .CatchError
+    .Map operators
+
+16. Http Interceptors
+
+    .Allows us to intercept request
+    .We can change data and add headers.
 
 
-    
+    1). ng g interceptor request     // this is how you generate an interceptor using cli.
+
+    2). modify app.module.ts:
+
+        providers: [
+            {
+            provide: HTTP_INTERCEPTORS,
+            useClass: RequestInterceptor,
+            multi: true,
+            }
+        ],
+
+    3). modify request.interceptor.ts
+
+        intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+            //console.log('Request Interceptor', request);
+
+            //You have to clone a new request, and add whatever you need to add
+            const newRequest = request.clone({headers: new HttpHeaders({token: '1234567'})})
+
+            //do the HTTP call using the new request.
+            return next.handle(newRequest);
+        }
 
 
 
-video time: 7:41, Angular Http and Observables
+17. APP_Initializers
+
+    .APP_INITIALIZER allows you to inject function when application startup.
+
+
+
+
+
+video time: 9:29, Angular Http and Observables
