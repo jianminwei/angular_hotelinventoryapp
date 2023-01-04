@@ -191,7 +191,47 @@
     .APP_INITIALIZER allows you to inject function when application startup.
 
 
+    a) ng g s init       //generate a init service.
+
+    b) Put following code in InitService
+
+        export class InitService {
+            config: any;
+
+            constructor(private http:HttpClient) { }
+
+            init() {
+                return this.http
+                .get('assets/config.json')
+                .pipe(tap((config) => (this.config = config)));
+            }
+        }
+
+    c) Add a function to app.module.ts 
+
+        function initFactory(initService: InitService) {
+            return () => initService.init();
+        }
+
+    d) Add following to app.module.ts providers section.
+        {
+        provide: APP_INITIALIZER,
+        useFactory: initFactory,
+        deps: [InitService],
+        multi: true
+        }   
+
+    e) Use it in app.componenet.ts constructor.
+
+        constructor(@Inject(localStorageToken) private localStorage: Storage,
+                    private initService: InitService) {
+            console.log(initService.config);
+
+        }     
+
+    f) you should be able to see the config.json in the dev tools console.
 
 
+    
 
 video time: 9:29, Angular Http and Observables
