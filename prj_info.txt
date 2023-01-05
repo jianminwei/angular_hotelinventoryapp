@@ -267,5 +267,16 @@
         <router-outlet></router-outlet>
         
 
+20. Use Angular Material
+
+    a) Add angular Material
+
+        ng add @angular/material
+
+        Choose  theme  Indigo/Pink      
+        ? Set up global Angular Material typography styles? Yes 
+        ? Set up browser animations for Angular Material? Yes
+
+
 
 video time: 9:35, Angular Router
