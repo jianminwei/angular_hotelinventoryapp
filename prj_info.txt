@@ -232,6 +232,35 @@
     f) you should be able to see the config.json in the dev tools console.
 
 
-    
+18. Angular Router
+    .Setup Router
+    .Using ActivatedRoute service
+    .Using Router service
+    .Feature Module and routing
+    .Nested Routing and Child Routes
+    .Lazy Loading.
+    .Route Guards
 
-video time: 9:29, Angular Http and Observables
+
+
+    a) Setup
+
+        .import Router Module
+        .forRoot method allows us to add multiple route config.
+        .Default route
+        .Dynamic route
+        .Wild card route
+
+
+
+        Configured first route 'rooms', call component RoomsComponent.
+        and empty path '' (http://localhost:4200) redirectTo rooms route.
+        
+        const routes: Routes = [
+            {path: 'rooms', component: RoomsComponent},
+            {path: '', redirectTo: 'rooms', pathMatch: 'full'},
+        ];
+        
+
+
+video time: 9:35, Angular Router
