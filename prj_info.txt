@@ -255,11 +255,16 @@
 
         Configured first route 'rooms', call component RoomsComponent.
         and empty path '' (http://localhost:4200) redirectTo rooms route.
-        
+
         const routes: Routes = [
             {path: 'rooms', component: RoomsComponent},
             {path: '', redirectTo: 'rooms', pathMatch: 'full'},
         ];
+
+        finally, modify app.component.html to comment everything else, only add below line to it.
+        It really means that app.component.html is taking 100% of Router output.
+
+        <router-outlet></router-outlet>
         
 
 
