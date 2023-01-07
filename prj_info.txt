@@ -304,6 +304,12 @@
             <router-outlet></router-outlet>
 
 
+21. Configured wildcard route to open page-notfound component.
 
+    a). Generate page-notfound component.
 
-video time: 9:35, Angular Router
+    b). Configure wildcar route in app-routing.module.ts
+
+      {path: '**', component: PageNotfoundComponent}, //wild card routes
+
+video time: 10:01, Angular Router

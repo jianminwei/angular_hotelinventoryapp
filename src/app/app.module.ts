@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 
 
 function initFactory(initService: InitService) {
@@ -27,7 +28,8 @@ function initFactory(initService: InitService) {
     AppComponent,
     RoomsComponent,
     RoomsListComponent,
-    AppNavComponent
+    AppNavComponent,
+    PageNotfoundComponent
   ],
   imports: [
     BrowserModule,
