@@ -277,6 +277,33 @@
         ? Set up global Angular Material typography styles? Yes 
         ? Set up browser animations for Angular Material? Yes
 
+    b). generate app navigation
+
+        ng g @angular/material:navigation app-nav
+
+    c). In app.component.html:
+
+        Comment out <!-- <router-outlet></router-outlet> -->
+
+        And add,  <app-app-nav></app-app-nav>
+
+        This is really replacing router outlet by app-nav output.
+
+
+    d). In app-nav.component.html, change like below
+
+            <mat-nav-list>
+                <a mat-list-item  routerLink="rooms" >Rooms</a>
+                <a mat-list-item href="#">Link 2</a>
+                <a mat-list-item href="#">Link 3</a>
+            </mat-nav-list>
+
+        And move the Router outlet here:
+
+            <!-- Add Content Here -->
+            <router-outlet></router-outlet>
+
+
 
 
 video time: 9:35, Angular Router
