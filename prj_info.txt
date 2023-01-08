@@ -312,4 +312,8 @@
 
       {path: '**', component: PageNotfoundComponent}, //wild card routes
 
+
+
+added a line.
+
 video time: 10:01, Angular Router
