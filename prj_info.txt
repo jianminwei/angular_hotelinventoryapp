@@ -335,5 +335,30 @@
         </td>
 
 
+23. ActivatedRoute service
+
+    .Allows to read the router data.
+    .Allows access to snapshot data.
+    .Allows to access data from Route Config.
+
+
+    a). Change tsconfig.json to add following TS option:
+
+            "noImplicitAny": false,
+
+    b). Change rooms-booking.component.ts to add following property:
+
+         id$ = this.router.params.pipe(map(params => params['roomNumber']));
+
+    
+    c). Change rooms-booking.component.html as following:
+
+        <div> Room Number: {{id$ | async}}</div>
+
+
+        Note: id$ is an RxJs Observable, so here needs to use async pipe.
+
+
+
 
 video time: 10:11, Angular Router

@@ -6,7 +6,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 
 const routes: Routes = [
   {path: 'rooms', component: RoomsComponent},
-  {path: 'rooms/:id', component: RoomsBookingComponent},
+  {path: 'rooms/:roomNumber', component: RoomsBookingComponent},
   {path: '', redirectTo: 'rooms', pathMatch: 'full'},
   {path: '**', component: PageNotfoundComponent}, //wild card routes
 ];
