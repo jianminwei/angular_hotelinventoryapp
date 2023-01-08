@@ -359,6 +359,54 @@
         Note: id$ is an RxJs Observable, so here needs to use async pipe.
 
 
+24. ActivatedRoute.
+
+    Use paramMap()
+
+
+25. Template Driven Forms 
+
+    .Setting Up Template Driven Forms.
+    .Validating Forms.
+    .Submit and Reset Forms.
+    .Custom Pipe demo with Forms.
+    .Writing a custom directive.
+    .Writing custom validator
+
+
+    .Import FormsModule to module
+    .In Template Driven Forms we create Forms using HTML tag 
+    .Good for developers who likes to have more control using HTML 
+    .Use ngModel for 2 way data binding.
+
+
+    a). Create a new component:
+
+        ng g c rooms-add
+    
+    b). Add FormsModule to app.module.ts 
+
+    c). Add  following in app-routing.module.
+
+        {path: 'rooms/add', component: RoomsAddComponent}, 
+    
+    d). Add  following to app-nav.component      
+    
+        <a mat-list-item  routerLink="rooms/add" >Add Room</a>
+
+    e). Modify rooms-add.component.html to have the form view.
+
+    f). Added addRoom() method to rooms-add.component.
+
+        AddRoom() {
+            this.roomService.addRoom(this.room)
+            .subscribe((data) => (this.sucessMessage = 'Room Added Successfully'))
+
+        }
+
+
+
+
 
 
 video time: 10:11, Angular Router
