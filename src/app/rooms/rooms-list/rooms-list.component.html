@@ -18,9 +18,11 @@ Rooms List
         <td>{{room.checkinTime | date}}</td> <!--apply a date pipe-->
         <td>{{room.rating | number : '1.2-2' }}</td> <!-- apply a decimal pipe-->
         <td>
-            <button class="btn btn-primary" (click)="selectRoom(room)">
+            <!-- <button class="btn btn-primary" (click)="selectRoom(room)">
                 Select
-            </button>
+            </button> -->
+
+            <button class="btn btn-primary" [routerLink]="['/rooms', room.roomNumber]">Book Room</button>
         </td>
     </tr>
 </table>

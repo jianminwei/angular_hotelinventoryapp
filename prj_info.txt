@@ -314,6 +314,26 @@
 
 
 
-added a line.
+22. Dynamic route.
 
-video time: 10:01, Angular Router
+    a). Under "rooms" folder (you can right click on "rooms" folder in the explorer and select "open in integreated terminal" ), generate a rooms-booking componenet.
+
+        ng g c rooms-booking
+
+    b). In app-routing-module.ts, add below new path:
+
+      {path: 'rooms/:id', component: RoomsBookingComponent},
+
+    c). In rooms-list.componenet.html, comment out original button click event, replace it by a routerLink:
+
+        <td>
+            <!-- <button class="btn btn-primary" (click)="selectRoom(room)">
+                Select
+            </button> -->
+
+            <button class="btn btn-primary" [routerLink]="['/rooms', room.roomNumber]">Book Room</button>
+        </td>
+
+
+
+video time: 10:11, Angular Router
