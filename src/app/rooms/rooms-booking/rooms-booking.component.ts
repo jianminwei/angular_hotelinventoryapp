@@ -12,7 +12,12 @@ export class RoomsBookingComponent implements OnInit {
 
   // id$ ! : Observable<string>;
 
-  id$ = this.router.params.pipe(map(params => params['roomNumber']));
+  // id$ = this.router.params.pipe(map(params => params['roomNumber']));
+
+  /**
+   * paramMap() is prefered way. You can get multiple parameters from the route.
+   */
+  id$ = this.router.paramMap.pipe(map(params => params.get('roomNumber')));
 
   constructor(private router: ActivatedRoute) { }
 
