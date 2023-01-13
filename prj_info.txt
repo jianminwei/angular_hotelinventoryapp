@@ -130,7 +130,7 @@
 
         1) import { HttpClient } from '@angular/common/http';
 
-        2) Add HttpClient in the constructor
+        2) Add HttpClient in the constructor in rooms.service.ts
             constructor(private http:HttpClient) { }
         3) Modify the getRooms() methods
 
@@ -405,7 +405,36 @@
         }
 
 
+26. Template Driven Forms Validations
 
+    .Use HTML5 validation to validate Forms (required)
+    .Use disabled property to avoid submitting blank forms.
+    .Use #templateVariable to access the state of Forms.
+
+
+    a) use #roomsForm="ngForm" to get an instance of the form.
+
+        roomsForm.valid would give the state of the form.
+
+    b). Add bellow to the button. When form is invalid, button is disabled.
+
+        <button [disabled]="roomsForm.invalid" class="btn btn-primary" type="submit">Submit</button>
+
+    c). Use minlength maxlength validations
+
+    d). Use min max for number control validations.
+
+    f). You can use ngModel to add an ID to an html element, and reference it.
+
+        <div class="form-group">
+            <input required minlength="5" maxlength="20" 
+            #roomAmenities="ngModel"
+            class="form-control" type="text" name="amenities" placeholder="Amenities" [(ngModel)]="room.amenities">
+        </div>
+
+        <div class="alert alert-danger" *ngIf="roomAmenities.errors?.['minlength']">
+            Amenities should be 5 characters minimum.
+        </div>    
 
 
 
