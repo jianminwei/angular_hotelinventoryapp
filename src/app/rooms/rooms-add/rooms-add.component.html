@@ -11,7 +11,7 @@
 </div>
 
 
-<form #roomsForm="ngForm" (ngSubmit)="AddRoom()">
+<form #roomsForm="ngForm" (ngSubmit)="AddRoom(roomsForm)">
     <div class="form-group">
         <input required class="form-control" type="text" name="roomType" placeholder="Room Type" [(ngModel)]="room.roomType">
     </div>
@@ -24,6 +24,10 @@
 
     <div class="alert alert-danger" *ngIf="roomAmenities.errors?.['minlength']">
         Amenities should be 5 characters minimum.
+    </div>
+
+    <div *ngIf="roomAmenities.dirty && roomAmenities.errors?.['required']">
+        Please provide the amenities.
     </div>
 
     <div class="form-group">

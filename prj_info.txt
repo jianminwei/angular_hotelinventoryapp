@@ -436,6 +436,22 @@
             Amenities should be 5 characters minimum.
         </div>    
 
+27. Use form.dirty and reset form.
+
+    a). In rooms-add.componenet.html, added:
+
+        <div *ngIf="roomAmenities.dirty && roomAmenities.errors?.['required']">
+            Please provide the amenities.
+        </div>
+
+    b). Modified AddRoom() in rooms-add.component.ts to reset the form after adding a room.
+
+        AddRoom(roomsForm: NgForm) {
+            this.roomService.addRoom(this.room)
+            .subscribe((data) => {this.sucessMessage = 'Room Added Successfully'; roomsForm.reset();})
+            
+        }    
 
 
-video time: 10:11, Angular Router
+
+video time: 11:11, Angular Router

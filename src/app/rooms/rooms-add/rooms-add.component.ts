@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { RoomList } from '../rooms';
 import { RoomsService } from '../services/rooms.service';
 
@@ -26,10 +27,10 @@ export class RoomsAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  AddRoom() {
+  AddRoom(roomsForm: NgForm) {
     this.roomService.addRoom(this.room)
-    .subscribe((data) => (this.sucessMessage = 'Room Added Successfully'))
-
+    .subscribe((data) => {this.sucessMessage = 'Room Added Successfully'; roomsForm.reset();})
+    
   }
 
 }
