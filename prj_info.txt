@@ -458,6 +458,21 @@
     .Change behavior of DOM on hover 
     .Use HostListener to listen to events 
 
-    
+    a). ng g d hover to create the hover.directive 
+
+    b). Inject the ElementRef constructor(private element:ElementRef)  in the constructor.
+
+    c). Change the parent element behavior:
+
+        ngOnInit(): void {
+            this.element.nativeElement.style.color = this.color;
+            this.element.nativeElement.style.backgroundColor = "yellow";
+        }
+
+    d). Use it in login.component.html
+        <input appHover type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Provide your email">
+
+
+        
 
 video time: 11:11, Angular Router
