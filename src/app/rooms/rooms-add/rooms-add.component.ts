@@ -29,8 +29,12 @@ export class RoomsAddComponent implements OnInit {
 
   AddRoom(roomsForm: NgForm) {
     this.roomService.addRoom(this.room)
-    .subscribe((data) => {this.sucessMessage = 'Room Added Successfully'; roomsForm.reset();})
-    
-  }
+      .subscribe(
 
+        (data) => {
+          this.sucessMessage = 'Room Added Successfully';
+          roomsForm.reset();
+        }
+      )
+  }
 }

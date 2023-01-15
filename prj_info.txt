@@ -452,6 +452,12 @@
             
         }    
 
+28. Custom Directive with Forms
 
+    .ng g d hover 
+    .Change behavior of DOM on hover 
+    .Use HostListener to listen to events 
+
+    
 
 video time: 11:11, Angular Router
