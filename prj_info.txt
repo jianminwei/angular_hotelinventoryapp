@@ -23,6 +23,14 @@
 
     <app-rooms></app-rooms>
 
+6.1 Angular hashtags
+
+    #: template variable declaration
+    (): event binding
+    []: property binding
+    [()]: two-way property binding
+    {{}}: interpolation
+
 7. Template Syntax
 
     Binding Syntax
